@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "sourceMap": false
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "../src/**/*.d.ts",
+        "../typings/index.d.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

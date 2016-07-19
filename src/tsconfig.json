@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "declaration": true,
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "sourceMap": true,
+        "outDir": "../build"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "../typings/index.d.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+      "./typings.d.ts"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": false
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "webpack-electron-packager",
+    "version": "1.0.0",
+    "description": "Get your Electron app ready for distribution using Webpack",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cortopy/webpack-electron-packager"
+    },
+    "homepage": "https://github.com/cortopy/webpack-electron-packager",
+    "main": "./build/index.js",
+    "scripts": {
+        "test": "rimraf ./spec/coverage && istanbul cover _mocha spec",
+        "test:watch": "rimraf ./spec/coverage && mocha spec --watch"
+    },
+    "keywords": [
+        "Webpack",
+        "plugin",
+        "Electron"
+    ],
+    "author": "Juan J. Jimenez-Anca",
+    "license": "MIT",
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "mocha": "^2.5.3"
+    },
+    "dependencies": {
+        "colors": "^1.1.2",
+        "electron-packager": "^7.0.2",
+        "lodash": "^4.13.1"
+    }
+}
