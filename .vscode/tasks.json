@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "command": "tsc",
+  "problemMatcher":"$tsc-watch",
+  "showOutput": "silent",
+  "echoCommand": true,
+  "tasks": [
+    {
+      "taskName": "Build",
+      "isBuildCommand": true,
+      "dependsOn": [
+        "Build Src",
+        "Build Tests"
+      ]
+    },
+    {
+      "taskName": "Build Src",
+      "suppressTaskName": true,
+      "args": [
+        "-w", "-p", "./src"
+      ]
+    },
+    {
+      "taskName": "Build Tests",
+      "suppressTaskName": true,
+      "args": [
+        "-w", "-p", "spec"
+      ]
+    }
+  ]
+}

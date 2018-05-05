@@ -1,22 +1,24 @@
 {
-    "compilerOptions": {
-        "declaration": false,
-        "target": "es6",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noImplicitAny": false,
-        "removeComments": true,
-        "sourceMap": false
-    },
-    "filesGlob": [
-        "./**/*.ts",
-        "../src/**/*.d.ts",
-        "../typings/index.d.ts",
-        "!./node_modules/**/*.ts"
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "outDir": ".",
+    "rootDir": ".",
+    "sourceMap": false,
+    "target": "es6",
+    "typeRoots": [
+      "../node_modules/@types"
     ],
-    "compileOnSave": true,
-    "buildOnSave": false,
-    "atom": {
-        "rewriteTsconfig": false
-    }
+    "lib": [
+      "es2016"
+    ]
+  },
+  "compileOnSave": false,
+  "exclude":[
+    "**/*.js",
+    "coverage",
+    "build"
+  ]
 }

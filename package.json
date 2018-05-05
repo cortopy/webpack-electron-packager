@@ -19,13 +19,24 @@
     ],
     "author": "Juan J. Jimenez-Anca",
     "license": "MIT",
-    "devDependencies": {
-        "chai": "^3.5.0",
-        "mocha": "^2.5.3"
-    },
     "dependencies": {
+        "@types/rimraf": "^0.0.28",
         "colors": "^1.1.2",
-        "electron-packager": "^7.0.2",
-        "lodash": "^4.13.1"
+        "electron-packager": "^8.7.1"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.0.1",
+        "@types/electron-packager": "^5.1.29",
+        "@types/istanbul": "^0.4.29",
+        "@types/mocha": "^2.2.41",
+        "@types/node": "^8.0.2",
+        "@types/webpack": "^3.0.0",
+        "chai": "^4.0.2",
+        "copy-webpack-plugin": "^4.0.1",
+        "electron": "^1.6.11",
+        "mocha": "^3.4.2",
+        "rimraf": "^2.6.1",
+        "ts-node": "^3.1.0",
+        "webpack": "^3.0.0"
     }
 }

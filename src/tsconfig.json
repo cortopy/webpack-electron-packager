@@ -1,25 +1,17 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "target": "es5",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noImplicitAny": false,
-        "removeComments": true,
-        "sourceMap": true,
-        "outDir": "../build"
-    },
-    "filesGlob": [
-        "./**/*.ts",
-        "../typings/index.d.ts",
-        "!./node_modules/**/*.ts"
+  "compilerOptions": {
+    "declaration": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "outDir": "../build",
+    "sourceMap": true,
+    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "files": [
-      "./typings.d.ts"
-    ],
-    "compileOnSave": true,
-    "buildOnSave": false,
-    "atom": {
-        "rewriteTsconfig": false
-    }
+    "lib": [
+      "es2016"
+    ]
+  },
+  "compileOnSave": false
 }

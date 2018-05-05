@@ -1,9 +1,10 @@
 "use strict";
-var __assign = (this && this.__assign) || Object.assign || function(t) {
+var __assign = (this && this.__assign) || Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
+        for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
     }
     return t;
 };
@@ -12,12 +13,7 @@ const path = require("path");
 const child_process_1 = require("child_process");
 const electronPackager = require("electron-packager");
 const colors = require("colors/safe");
-// #TODO:
-// - packager types
-// - clean up util
-// - clean up tests index
-// - clean up tests util
-// - strict mode
+const util_1 = require("./util");
 class WebpackElectronPackager {
     constructor(opts) {
         this.defaultIgnores = [
@@ -33,7 +29,7 @@ class WebpackElectronPackager {
                     return false;
                 }
                 else {
-                    const userIgnores = opts.electronPackagerOptions.ignore;
+                    const userIgnores = this.packagerOpts.ignore;
                     if (userIgnores) {
                         if (typeof userIgnores === "function") {
                             const userIgnoresCb = userIgnores;
@@ -46,10 +42,9 @@ class WebpackElectronPackager {
                     ;
                 }
             } });
-        this.externals = toArrIfExist(opts.externals);
+        this.externals = util_1.toArrIfExist(opts.externals);
     }
     apply(compiler) {
-        console.log("compiler: ", compiler);
         this.outputPath = compiler.options.output.path;
         var cb = this.done;
         compiler.plugin("after-emit", () => electronPackager(this.packagerOpts, cb.bind(this)));
@@ -78,16 +73,6 @@ class WebpackElectronPackager {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = WebpackElectronPackager;
-/**
- *   Check if an option has been provided in webpack config files
- *   If it exists, return the value as array
- *   Otherwise, return undefined.
- *
- *   @param  {string | string[]}    k   - Key of Webpack option
- *   @return {string[]}                 - Value[] | Undefined
- */
-function toArrIfExist(k) {
-    if (k)
-        return Array.isArray(k) ? k : [k];
-}
-//# sourceMappingURL=index.js.map
+// Export as a node module
+module.exports = WebpackElectronPackager;
+//# sourceMappingURL=index.js.map 
